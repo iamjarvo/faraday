@@ -89,6 +89,7 @@ module Faraday
 
       def net_http_connection(env)
         if proxy = env[:request][:proxy]
+          p proxy: proxy
           Net::HTTP::Proxy(proxy[:uri].host, proxy[:uri].port, proxy[:user], proxy[:password])
         else
           Net::HTTP
